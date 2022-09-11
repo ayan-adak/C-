@@ -1,0 +1,40 @@
+#include<iostream>
+#include<iomanip>
+#include<cstring>
+
+using nameclass std;
+class ComplexNumbers
+{
+    private:
+            int r;
+            int i;
+    public:
+            void setData()
+            {
+                cout<<"Enter Real Value of the Complex: ";
+                cin>>this->r;
+                cout<<"Enter Imaginary Value of the Complex: ";
+                cin>>this->i;
+            }
+            void displayData()
+            {
+                cout<<"The Real Value of the Complex Number is: ";
+                cout<<this->r<<endl;
+                cout<<"The Imaginary Value of the Complex Number is: ";
+                cout<<this->i<<endl;
+                cout<<r;
+                if(i!=0)
+                cout<<"+"<<i<<"i"<<endl;
+                else
+                cout<<i<<"i"<<endl;
+            }
+};
+ 
+int main()
+{
+  ComplexNumber x;
+  x.setData();
+  cout<<"The Entered Complex Number is: ";
+  x.displayData();
+  return 0;
+}
