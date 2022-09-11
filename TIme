@@ -1,0 +1,34 @@
+#include<iostream>
+#include<iomanip>
+#include<cstring>
+
+using namespace std;
+class Time
+{
+	private:
+		int hrs;
+		int min;
+		int sec;
+	public:
+		void setData()
+		{
+			cout<<"Enter Hours: ";
+			cin>>this->hrs;
+			cout<<"Enter Minutes:";
+			cin>>this->min;
+			cout<<"Enter Seconds:";
+			cin>>this->sec;
+		}
+		void displayData()
+		{
+			cout<<"The Correct Time is  "<<hrs<<":"<<min<<":"<<sec<<endl;
+		}
+};
+
+int main()
+{
+	Time x;
+	x.setData();
+	x.displayData();
+	return 0;
+}
