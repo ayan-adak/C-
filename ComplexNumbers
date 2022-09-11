@@ -2,8 +2,8 @@
 #include<iomanip>
 #include<cstring>
 
-using nameclass std;
-class ComplexNumbers
+using namespace std;
+class ComplexNumber
 {
     private:
             int r;
@@ -24,13 +24,16 @@ class ComplexNumbers
                 cout<<this->i<<endl;
                 cout<<r;
                 if(i!=0)
-                cout<<"+"<<i<<"i"<<endl;
-                else
-                cout<<i<<"i"<<endl;
-            }
+                {
+                	if(i>0)
+					cout<<"+"<<i<<"i"<<endl;
+                	else
+                	cout<<i<<"i"<<endl;
+            	}
+        	}        
 };
  
-int main()
+int main(int argc , char * argv[])
 {
   ComplexNumber x;
   x.setData();
