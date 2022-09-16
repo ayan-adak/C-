@@ -1,0 +1,45 @@
+#include<iostream>
+#include<iomanip>
+#include<cstring>
+
+using namespace std;
+class Books
+{
+	private:
+		string title;
+		string author_name;
+		string publisher;
+		int edition;
+		int price;
+	
+	public:
+		void setData()
+		{
+			cout<<"Enter the Title of the Book: ";
+			cin>>this->title;
+			cout<<"Enter the Author Name: ";
+			cin>>this->author_name;
+			cout<<"Enter Publisher Name: ";
+			cin>>this->publisher;
+			cout<<"Enter Edition: ";
+			cin>>this->edition;
+			cout<<"Enter Price of the Book: ";
+			cin>>this->price;
+		}
+		void displayData()
+		{
+			cout<<"Title of the Book: "<<title<<endl;
+			cout<<"Author Name: "<<author_name<<endl;
+			cout<<"Publisher Name: "<<publisher<<endl;
+			cout<<"Edition: "<<edition<<endl;
+			cout<<"Price of the Book: "<<price<<endl;
+		}
+};
+
+int main()
+{
+	Books x;
+	x.setData();
+	x.displayData();
+	return 0;
+}
