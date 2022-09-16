@@ -1,0 +1,41 @@
+#include<iostream>
+#include<iomanip>
+#include<cstring>
+
+using namespace std;
+class Parts
+{
+	private:
+		int partid;
+		int part_number;
+		int cost;
+		int quantity;
+		
+	public:
+		void setData()
+		{
+			cout<<"Enter Part ID: ";
+			cin>>this->partid;
+			cout<<"Enter Part Number: ";
+			cin>>this->part_number;
+			cout<<"Enter Cost: ";
+			cin>>this->cost;
+			cout<<"Enter Quantity in the Stock: ";
+			cin>>this->quantity;
+		}
+		void displayData()
+		{
+			cout<<"The Part ID is: "<<partid<<endl;
+			cout<<"The Part Number is: "<<part_number<<endl;
+			cout<<"The Cost is: "<<cost<<endl;
+			cout<<"The Quantity in the Stock is: "<<quantity<<endl;
+		}
+};
+
+int main()
+{
+	Parts x;
+	x.setData();
+	x.displayData();
+	return 0;
+}
