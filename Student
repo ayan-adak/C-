@@ -1,0 +1,53 @@
+#include<iostream>
+#include<iomanip>
+#include<cstring>
+
+using namespace std;
+class Student
+{
+	private:
+		int rollno;
+		string name;
+		int m1, m2, m3;
+		int total;
+		int avg;
+		int result;
+		
+	public:
+		void setData()
+		{
+			cout<<"Enter the Roll No of the Student: ";
+			cin>>this->rollno;
+			cout<<"Enter Name of the Student: ";
+			cin>>this->name;
+			cout<<"Enter Marks of First Subject: ";
+			cin>>this->m1;
+			cout<<"Enter Marks of Second Subject: ";
+			cin>>this->m2;
+			cout<<"Enter Marks of Third Subject: ";
+			cin>>this->m3;
+		}
+		void displayData()
+		{
+			cout<<endl;
+			cout<<"RESULT"<<endl;
+			cout<<"Roll No of the Student: "<<rollno<<endl;
+			cout<<"Name of the Student: "<<name<<endl;
+			cout<<"Marks of First Subject: "<<m1<<endl;
+			cout<<"Marks of Second Subject: "<<m2<<endl;
+			cout<<"Marks of Third Subject: "<<m3<<endl;
+			total = m1+m2+m3;
+			cout<<"Total: "<<total<<endl;
+			avg = total/3;
+			cout<<"Average: "<<avg<<endl;
+			result = (total/100)*30;
+			cout<<"Percentage: "<<result<<"%"<<endl;
+		}
+};
+
+int main()
+{
+	Student x;
+	x.setData();
+	x.displayData();
+}
