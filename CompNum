@@ -1,0 +1,63 @@
+#include<iostream>
+#include<iomanip>
+#include<conio.h>
+
+using namespace std;
+class CompNum
+{
+	private:
+		int i,r;
+	public:
+		void getData();
+		void displayData();
+		void showNum();
+		int addNum(CompNum X, CompNum Y);
+		int subNum(CompNum X, CompNum Y);
+		int multNum(CompNum X, CompNum Y);
+};
+
+void CompNum :: getData()
+{
+	cout<<"Enter Real Part: "; cin>>r;
+	cout<<"Enter Imaginary Part: "; cin>>i;
+}
+void CompNum :: displayData()
+{
+	(i>=0)? cout<<"The Complex Number is: " <<r<<"+"<<i<<"i\n" : cout<<"The Complex Number is: " <<r<<i<<"i\n";
+}
+
+void CompNum::showNum(){
+	(i>=0)? cout<<r<<"+"<<i<<"i\n" : cout<<r<<i<<"i\n";
+}
+int CompNum :: addNum(CompNum X, CompNum Y)
+{
+	this->r = X.r + Y.r;
+	this->i = X.i + Y.i;
+	return 1; 
+}
+int CompNum :: subNum(CompNum X, CompNum Y)
+{
+	this->r = X.r - Y.r;
+	this->i = X.i - Y.i;
+	return 1; 
+}
+int CompNum :: multNum(CompNum X, CompNum Y)
+{
+	this->r = (X.r * Y.r) - (X.i * Y.i);
+	this->i = (X.i * Y.i) + (X.i * Y.i);
+	return 1;
+}
+
+int main()
+{
+	CompNum X,Y,A,B,C;
+	X.getData(); X.displayData();
+	Y.getData(); Y.displayData();
+	A.addNum(X,Y);
+	cout<<"The Sum is: "; A.showNum();
+	B.subNum(X,Y);
+	cout<<"The Difference is: "; B.showNum();
+	C.multNum(X,Y);
+	cout<<"The Product is: "; C.showNum();
+	return 0;
+}
