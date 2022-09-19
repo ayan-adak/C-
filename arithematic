@@ -1,0 +1,66 @@
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+class Number
+{
+	float value;
+	public:
+		void getVal();
+		void displayVal();
+		float addVal(Number X, Number Y);
+		float subVal(Number X, Number Y);
+		float multVal(Number X, Number Y);
+		float divVal(Number X, Number Y);
+		int modVal(Number X, Number Y);
+};
+
+void Number :: getVal()
+{
+	cout<<"Enter Number: "; cin>>this->value;
+}
+void Number :: displayVal()
+	{
+		cout<<this->value<<endl;
+	}
+float Number :: addVal(Number X, Number Y)
+	{
+		this->value = X.value + Y.value;
+		return this->value;
+	}
+float Number :: subVal(Number X, Number Y)
+	{
+		this->value = X.value - Y.value;
+		return this->value;
+	}
+float Number :: multVal(Number X, Number Y)
+	{
+		this->value = X.value * Y.value;
+	}
+float Number :: divVal(Number X, Number Y)
+	{
+		this->value = X.value / Y.value;
+	}
+int Number :: modVal(Number X, Number Y)
+	{
+		this->value = (int)X.value % (int)Y.value;
+		return this->value;
+	}
+	
+int main()
+{
+	Number X,Y,A,B,C,D,E;
+	X.getVal(); Y.getVal();
+	A.addVal(X, Y);
+	cout<<"The Sum is: "; A.displayVal();\
+	B.subVal(X, Y);
+	cout<<"The Difference is: "; B.displayVal();
+	C.multVal(X, Y);
+	cout<<"The Product is: "; C.displayVal();
+	D.divVal(X, Y);
+	cout<<"The Quotient is: "; D.displayVal();
+	E.modVal(X, Y);
+	cout<<"The Remainder is: "; E.displayVal();
+	
+	return 0;
+}
