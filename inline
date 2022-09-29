@@ -1,0 +1,22 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+inline float volume(float a, float b, float c=1)
+{
+    return a*b*c;
+}
+
+int main()
+{
+    float x,y,z,v;
+    cout<<"Enter 3 values of room"<<endl;
+    cin>>x>>y>>z;
+    v = volume(x,y,z);
+    cout<<"The Volume of a room: "<<v<<endl;
+    cout<<"Enter 2 Values of Rectangle "<<endl;
+    cin>>x>>y;
+    v = volume(x,y);
+    cout<<"The area of rectangle: "<<v<<endl;
+    return 0;
+}
