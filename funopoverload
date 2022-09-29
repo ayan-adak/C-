@@ -1,0 +1,102 @@
+#include<iostream>
+using namespace std;
+class Number
+{
+    int a;
+    public:
+        void getData();
+        void display();
+        void add(Number X, Number Y, Number Z);
+        void add(Number X, Number Y);
+        void swap(Number &X);
+        Number operator+ (Number X);
+        Number& operator ++();
+};
+
+void Number :: getData()
+{
+    cout<<"Enter the Value of 'a': ";
+    cin>>this->a;
+}
+
+void Number :: display()
+{
+    cout<<"The Value of a is: "<<a<<endl;
+}
+
+void Number :: swap(Number &X)
+{
+    int temp = X.a;
+    X.a = this->a;
+    this->a = temp;
+}
+
+void Number :: add(Number X, Number Y, Number Z)
+{
+    this->a = X.a + Y.a + Z.a;
+}
+
+void Number :: add(Number X, Number Y)
+{
+    this->a = X.a + Y.a;
+}
+
+Number &Number :: operator ++()
+{
+    this->a = this->a+1;
+}
+
+Number Number :: operator+ (Number X)
+{
+    Number temp;
+    temp.a = this->a + X.a;
+    return temp;
+}
+
+int main()
+{
+    Number A,B,C,D;
+    cout<<"For A: "<<endl;
+    A.getData();
+    cout<<"For B: "<<endl;
+    B.getData();
+    cout<<"In A: "<<endl;
+    A.display();
+    cout<<"In B: "<<endl;
+    B.display();
+    C.add(A,B);
+    cout<<"Details of C = A + B"<<endl;
+    C.display();
+    D.add(A,B,C);
+    cout<<"Details of D = A + B + C"<<endl;
+    D.display();
+    A.swap(B);
+    cout<<"After Swapping Displaying Value"<<endl;
+    Number *p1 = &A , *p2 = &B;
+    cout<<"For A"<<endl;
+    p1->display();
+    cout<<"For B"<<endl;
+    p2->display();
+    cout<<"Creating an array of 5 objects"<<endl;
+    Number object[5];
+    cout<<"Enter value for 5 Objects"<<endl;
+    for(int i=0;i<5;i++)
+    {
+    	object[i].getData();
+	}
+	cout<<"Displaying Data of 5 Objects"<<endl;
+	p1 = object;
+    for(int i=0;i<5;i++)
+    {
+        p1->display();
+        ++p1;
+    }
+    Number E;
+    E = A + B;
+    cout<<"Details of E = A + B using operator overloading"<<endl;
+    E.display();
+    ++E;
+    cout<<"After ++E the details of E"<<endl;
+    E.display();
+    return 0;
+}
