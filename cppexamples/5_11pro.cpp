@@ -35,15 +35,15 @@ matrix trans(matrix m1)
     int i,j;
     for(i=0;i<3;i++)
            for(j=0;j<3;j++)
-             m2.m[1][2]=m1.m[j][i];
+             m2.m[i][j]=m1.m[j][i];
     return(m2);
   }
   int main()
   {
-   matrix mat1,mat2;
+    matrix mat1,mat2;
     mat1.read();
     cout<<"\n You entered the following matrix:";
-      mat1.display();
+    mat1.display();
     mat2=trans(mat1);
     cout<<"\nTransposed matrix: ";
     mat2.display();
